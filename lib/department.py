@@ -31,7 +31,6 @@ class Department:
         """
         CURSOR.execute(sql)
         CONN.commit()
-
     def save(self):
         """ Insert a new row with the name and location values of the current Department instance.
         Update object id attribute using the primary key value of new row.
@@ -51,7 +50,7 @@ class Department:
         """ Initialize a new Department instance and save the object to the database """
         department = cls(name, location)
         department.save()
-        return department
+        return department    
 
     def update(self):
         """Update the table row corresponding to the current Department instance."""
@@ -72,3 +71,4 @@ class Department:
 
         CURSOR.execute(sql, (self.id,))
         CONN.commit()
+    
